@@ -7,43 +7,34 @@
       console.log(geemails)
 
 
-       		document.getElementById("main").innerHTML = "Inbox" + (geemails.length);
+       		document.getElementById("main").innerHTML = "Inbox" + " (" + (geemails.length) + ")";
 			
 
        for (var i =0; i<geemails.length; i++) {
-       		console.log(geemails[i]);	
+          //console.log(geemails[i]); (just prints out all of geemails to console)
 
-       		var senderElem = document.createElement("div");
-       		senderElem.IdName = 'send';  // when i put this class name in here it's now only showing one email
-       		senderElem.innerHTML = geemails[i].sender;
-       		senderElem.style.color = "green";
-       		main.appendChild(senderElem);
+          var inBox = document.createElement("p");
+          inBox.className = 'inbox';
+          main.appendChild(inBox);
 
-       		var subjElem = document.createElement("div");
-       		subjElem.innerHTML = geemails[i].subject;
-       		main.appendChild(subjElem);
+          var senderBox = document.createElement("p");
+          senderBox.className = 'sender';
+          senderBox.innerHTML = "sender: " + geemails[i].sender;
+          inBox.appendChild(senderBox);
 
-       		var dateElem = document.createElement("div");
-       		dateElem.innerHTML = geemails[i].date;
-       		main.appendChild(dateElem);
+          var subjBox = document.createElement("p");
+          subjBox.className = 'subj';
+          subjBox.innerHTML = "subject: " + geemails[i].subject;
+          inBox.appendChild(subjBox);
 
-			       		
-       		document.getElementById("send").onclick = displayBody;
-
-       		function displayBody() {
-       			document.getElementById("main").innerHTML = geemails[i].body;
-       		}
-       		
-
-
-       	
- 		 
+          var dateBox = document.createElement("p");
+          dateBox.className = 'date';
+          dateBox.innerHTML = "date: " + geemails[i].date;
+          inBox.appendChild(dateBox);
 
 
 
-
- }
-         
+          }// this prints out all emails to console but not website
 
 
 
@@ -58,6 +49,7 @@
 		
 		<div class="container" id="main">
 			Build Me!
+
   
 		</div>
 	</body>

@@ -1,0 +1,23 @@
+.inbox{
+	border: 2px solid black;
+	padding: 5px;
+}
+
+.subj{
+	display: inline;
+	margin-left: 10px;
+	color: green;
+}
+
+.sender{
+	display:inline;
+	margin-left: 5px;
+	color: red;
+
+}
+
+.date{
+	display: inline;
+	margin-left: 20px;
+	color: blue;
+}
