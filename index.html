@@ -4,15 +4,61 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
+      console.log(geemails)
+
+
+       		document.getElementById("main").innerHTML = "Inbox" + (geemails.length);
+			
+
+       for (var i =0; i<geemails.length; i++) {
+       		console.log(geemails[i]);	
+
+       		var senderElem = document.createElement("div");
+       		senderElem.IdName = 'send';  // when i put this class name in here it's now only showing one email
+       		senderElem.innerHTML = geemails[i].sender;
+       		senderElem.style.color = "green";
+       		main.appendChild(senderElem);
+
+       		var subjElem = document.createElement("div");
+       		subjElem.innerHTML = geemails[i].subject;
+       		main.appendChild(subjElem);
+
+       		var dateElem = document.createElement("div");
+       		dateElem.innerHTML = geemails[i].date;
+       		main.appendChild(dateElem);
+
+			       		
+       		document.getElementById("send").onclick = displayBody;
+
+       		function displayBody() {
+       			document.getElementById("main").innerHTML = geemails[i].body;
+       		}
+       		
+
+
+       	
+ 		 
+
+
+
+
+ }
+         
+
+
+
+       // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
         
       };
     </script>
 	</head>
+	<h1> G-Easy Mail </h1>
 	<body>
+		
 		<div class="container" id="main">
 			Build Me!
+  
 		</div>
 	</body>
 </html>
