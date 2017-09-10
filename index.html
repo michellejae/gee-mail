@@ -23,7 +23,7 @@
           inBox.appendChild(senderBox);
 
           var subjBox = document.createElement("p");
-          subjBox.className = 'subj';
+          subjBox.className = "subj";
           subjBox.innerHTML = "subject: " + geemails[i].subject;
           inBox.appendChild(subjBox);
 
@@ -33,14 +33,32 @@
           inBox.appendChild(dateBox);
 
           var bodyBox = document.createElement("p");
-          bodyBox.className = 'body';
+          bodyBox.className = "body";
           bodyBox.innerHTML = geemails[i].body;
           bodyBox.style.display = "none";
           inBox.appendChild(bodyBox);
 
-
-
           }
+
+          var subjElem = document.getElementsByClassName("subj");
+
+          for (var i = 0; i<subjElem.length; i++){
+            subjElem[i].addEventListener("click", showBody)
+          }
+
+          function showBody (){
+            var displayBody = this.querySelectorAll(".body")[0];
+            if(displayBody.style.display === "none") {
+              displayBody.style.display = "inline";
+          } else {
+            displayBody.style.display = "none";
+          }
+          }
+
+          
+
+        
+
 
 
 
