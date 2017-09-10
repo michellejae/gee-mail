@@ -32,9 +32,15 @@
           dateBox.innerHTML = "date: " + geemails[i].date;
           inBox.appendChild(dateBox);
 
+          var bodyBox = document.createElement("p");
+          bodyBox.className = 'body';
+          bodyBox.innerHTML = geemails[i].body;
+          bodyBox.style.display = "none";
+          inBox.appendChild(bodyBox);
 
 
-          }// this prints out all emails to console but not website
+
+          }
 
 
 
