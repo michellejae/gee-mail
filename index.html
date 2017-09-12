@@ -36,14 +36,14 @@
           bodyBox.className = "body";
           bodyBox.innerHTML = geemails[i].body;
           bodyBox.style.display = "none";
-          inBox.appendChild(bodyBox);
+          subjBox.appendChild(bodyBox);
 
           }
 
           var subjElem = document.getElementsByClassName("subj");
 
           for (var i = 0; i<subjElem.length; i++){
-            subjElem[i].addEventListener("click", showBody)
+            subjElem[i].addEventListener("click", showBody);
           }
 
           function showBody (){
@@ -57,7 +57,10 @@
 
           
 
-        
+//         And your event listener is also good. The reason why the click functionality isn't working is because you'll need to append the body message under the subject parent.
+// querySelectorAll returns all children classes in the CSS. So the click functionality is attached to the parent and the child will show the effect of the event.
+
+// See if you can debug this and make the event work.
 
 
 
