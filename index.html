@@ -8,6 +8,10 @@
 
 
        		document.getElementById("main").innerHTML = "Inbox" + " (" + (geemails.length) + ")";
+
+          var newMessage = document.createElement("p")
+          newMessage.className = "new";
+          newMessage.innerHTML = "New Message";
 			
 
        for (var i =0; i<geemails.length; i++) {
