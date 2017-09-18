@@ -4,16 +4,12 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
-      console.log(geemails)
+      //console.log(geemails)
 
 
        		document.getElementById("main").innerHTML = "Inbox" + " (" + (geemails.length) + ")";
 
-          var newMessage = document.createElement("p")
-          newMessage.className = "new";
-          newMessage.innerHTML = "New Message";
 
-			
 
        for (var i =0; i<geemails.length; i++) {
           //console.log(geemails[i]); (just prints out all of geemails to console)
@@ -60,9 +56,33 @@
           }
           }
 
-          
+         // function getNewMessage(){
+         //  var newMessage = document.createElement("p");
+         //  newMessage.className = 'newMessage';
+         //  newMessage.innerHTML =  getNewMessage
+         //  main.appendChild(newMessage);
+         //  }
+         // setInterval(getNewMessage, 5000);
 
-//        
+         var newMessage = document.createElement("p");
+         newMessage.className = 'newMessage';
+         newMessage.innerHTML = myFunction();
+        // inBox.appendChild(newMessage);
+
+         function myFunction () {
+          newMessage = setInterval (getNewMessage, 3000);
+         }
+
+         function getNewMessage(){
+
+         };
+
+
+
+
+           // body...
+        
+
 
 
        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
@@ -76,6 +96,8 @@
 		
 		<div class="container" id="main">
 			Build Me!
+
+
 
   
 		</div>
