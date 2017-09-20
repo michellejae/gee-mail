@@ -56,26 +56,19 @@
           }
           }
 
-         // function getNewMessage(){
-         //  var newMessage = document.createElement("p");
-         //  newMessage.className = 'newMessage';
-         //  newMessage.innerHTML =  getNewMessage
-         //  main.appendChild(newMessage);
-         //  }
-         // setInterval(getNewMessage, 5000);
+        var newMail = getNewMessage();
 
-         var newMessage = document.createElement("p");
+
+        function myFucntion () { 
+         var newMessage = document.createElement("div");
          newMessage.className = 'newMessage';
-         newMessage.innerHTML = myFunction();
-        // inBox.appendChild(newMessage);
+         newMessage.innerHTML = newMail.date;
+         inBox.appendChild(newMessage);
+        }
+          setInterval(myFucntion, 5000);
 
-         function myFunction () {
-          newMessage = setInterval (getNewMessage, 3000);
-         }
 
-         function getNewMessage(){
 
-         };
 
 
 
