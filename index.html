@@ -57,20 +57,30 @@
           }
 
         var newMail = getNewMessage();
+        
+        
 
+        function myFunction () { 
+         var newSender = document.createElement("p");
+         newSender.className = 'newSender';
+         newSender.innerHTML = newMail.sender;
+         main.appendChild(newSender);
 
-        function myFucntion () { 
-         var newMessage = document.createElement("div");
-         newMessage.className = 'newMessage';
-         newMessage.innerHTML = newMail.date;
-         inBox.appendChild(newMessage);
+         var newSubject = document.createElement("p");
+         newSubject.className = 'newSubject';
+         newSubject.innerHTML = newMail.subject;
+         newSender.appendChild(newSubject);
+
+         var newDate = document.createElement("p");
+         newDate.className = 'newDate';
+         newDate.innerHTML = newMail.date;
+         newSubject.appendChild(newDate);
+
+         
+
+         
         }
-          setInterval(myFucntion, 5000);
-
-
-
-
-
+          setInterval(myFunction, 2000);
 
 
            // body...
