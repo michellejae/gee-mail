@@ -27,22 +27,33 @@
 	margin-left: 5px;
 }
 
+.newBox{
+	border: 2px solid black;
+	padding: 5px;
+}
+
 .newSender {
 	display: inline;
 	margin-left: 5px;
+	color: red;
 }
 
 .newSubject{
 	display: inline;
-	margin-left: 5px;
+	margin-left: 10px;
+	color: green;
 }
 
 .newDate {
 	display: inline;
-	margin-left: 5px;
+	margin-left: 20px;
+	color: blue;
 
 }
 
+.newBody{
+	color: black;
+	margin-left: 5px;
 
 
 

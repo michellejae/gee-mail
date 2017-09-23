@@ -7,7 +7,7 @@
       //console.log(geemails)
 
 
-       		document.getElementById("main").innerHTML = "Inbox" + " (" + (geemails.length) + ")";
+       		var counter = document.getElementById("main").innerHTML = "Inbox" + " (" + (geemails.length) + ")";
 
 
 
@@ -41,7 +41,14 @@
 
           }
 
-          var subjElem = document.getElementsByClassName("subj");
+          /* you need to create the bodyBox elem above cause you havve to set the dispaly to none. you then reference that none in the showBody function below for the if/else
+
+          not 100% sure why you need to create a new elem subjElem below tho and cant just reference the subjBox instead. 
+
+
+          */
+
+          var subjElem = document.getElementsByClassName("subj");  
 
           for (var i = 0; i<subjElem.length; i++){
             subjElem[i].addEventListener("click", showBody);
@@ -56,25 +63,52 @@
           }
           }
 
-        var newMail = getNewMessage();
         
+
         
 
         function myFunction () { 
+         var newMail = getNewMessage();
+
+         var newBox = document.createElement("p");
+         newBox.className = 'newBox';
+         main.appendChild(newBox);
+
          var newSender = document.createElement("p");
          newSender.className = 'newSender';
          newSender.innerHTML = newMail.sender;
-         main.appendChild(newSender);
+         newBox.appendChild(newSender);
 
          var newSubject = document.createElement("p");
          newSubject.className = 'newSubject';
          newSubject.innerHTML = newMail.subject;
-         newSender.appendChild(newSubject);
+         newBox.appendChild(newSubject);
 
          var newDate = document.createElement("p");
          newDate.className = 'newDate';
          newDate.innerHTML = newMail.date;
-         newSubject.appendChild(newDate);
+         newBox.appendChild(newDate);
+
+         var newBody = document.createElement("p");
+         newBody.className = 'newBody';
+         newBody.innerHTML = newMail.body;
+         newBody.style.display = 'none';
+         newSubject.appendChild(newBody);
+
+         var newSubjElem = document.getElementsByClassName('newSubject');
+
+         for (var i = 0; i<newSubjElem.length; i++) {
+          newSubjElem[i].addEventListener("click", showNewBody)
+         }
+
+         function showNewBody(){
+           var displayNewBody = this.querySelectorAll('.newBody')[0];
+            if(displayNewBody.style.display === "none") {
+              displayNewBody.style.display = "inline";
+          } else {
+            displayNewBody.style.display = "none";
+          }
+         }
 
          
 
