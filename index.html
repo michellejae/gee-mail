@@ -4,15 +4,13 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
-      //console.log(geemails)
 
-
-       		var counter = document.getElementById("main").innerHTML = "Inbox" + " (" + (geemails.length) + ")";
-
-
+          var counter = document.createElement("p");
+          counter.className = 'counter';
+          counter.innerHTML = "Inbox" + " (" + (geemails.length) + ")";
+          main.appendChild(counter);
 
        for (var i =0; i<geemails.length; i++) {
-          //console.log(geemails[i]); (just prints out all of geemails to console)
 
           var inBox = document.createElement("p");
           inBox.className = 'inbox';
@@ -45,6 +43,12 @@
 
           not 100% sure why you need to create a new elem subjElem below tho and cant just reference the subjBox instead. 
 
+          the subjELem created below is set to the elemnets that we want to add our event listner too. bedcause there are mutiple subj's in our array elem we need to use for loop to go thru it and add the event listener to every subj. 
+
+          once we step inside the function 'show body' is when we start talking about what we want to happen when we click. for this one we need an if / else statment cause it needs to eitehr be 'on' or 'off'. 
+
+          querySelectorAll returns all children classes in the CSS. So the click functionality is attached to the parent and the child will show the effect of the event.
+
 
           */
 
@@ -68,6 +72,7 @@
         
 
         function myFunction () { 
+        
          var newMail = getNewMessage();
 
          var newBox = document.createElement("p");
@@ -95,6 +100,10 @@
          newBody.style.display = 'none';
          newSubject.appendChild(newBody);
 
+         counter.innerHTML = "Inbox" + " (" + (geemails.length++) + ")";
+         main.appendChild(counter);
+
+
          var newSubjElem = document.getElementsByClassName('newSubject');
 
          for (var i = 0; i<newSubjElem.length; i++) {
@@ -109,17 +118,11 @@
             displayNewBody.style.display = "none";
           }
          }
-
-         
-
          
         }
           setInterval(myFunction, 2000);
 
-
-           // body...
-        
-
+          
 
 
        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
@@ -132,7 +135,7 @@
 	<body>
 		
 		<div class="container" id="main">
-			Build Me!
+			
 
 
 
