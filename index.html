@@ -5,10 +5,12 @@
     <script>
       window.onload = function(){
 
+          // var counter = geemails.length;
+
           var counter = document.createElement("p");
           counter.className = 'counter';
-          counter.innerHTML = "Inbox" + " (" + (geemails.length) + ")";
-          main.appendChild(counter);
+          counter.innerHTML = "Inbox" + " (" + geemails.length + ")";
+          count.appendChild(counter);
 
        for (var i =0; i<geemails.length; i++) {
 
@@ -72,7 +74,7 @@
         
 
         function myFunction () { 
-        
+
          var newMail = getNewMessage();
 
          var newBox = document.createElement("p");
@@ -101,7 +103,7 @@
          newSubject.appendChild(newBody);
 
          counter.innerHTML = "Inbox" + " (" + (geemails.length++) + ")";
-         main.appendChild(counter);
+         count.appendChild(counter);
 
 
          var newSubjElem = document.getElementsByClassName('newSubject');
@@ -133,9 +135,11 @@
 	</head>
 	<h1> G-Easy Mail </h1>
 	<body>
+   <p id="count">  </p>  
 		
 		<div class="container" id="main">
-			
+		
+
 
 
 
